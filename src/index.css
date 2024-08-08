@@ -90,10 +90,19 @@ button:focus-visible {
   max-width: 700px;
   display: block;
 }
+.drinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.drink-card {
+  background-color: #1a1a1a;
+  padding: 1rem;
+}
 .drink-img {
   width: 100%;
   display: block;
-  max-width: 500px;
+  max-width: 400px;
   object-fit: cover;
   aspect-ratio: 1/1;
 }

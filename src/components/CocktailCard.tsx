@@ -17,7 +17,7 @@ const CocktailCard = ({
       <footer>
         <h4>{name}</h4>
         <h4>{glass}</h4>
-        <Link to={`/cocktail/${id}`}>drink</Link>
+        <Link to={`/cocktail/${id}`}>details</Link>
       </footer>
     </div>
   );

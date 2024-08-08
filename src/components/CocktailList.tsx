@@ -10,9 +10,9 @@ const CocktailList = ({ drinks }: { drinks: Drink[] }) => {
       glass: strGlass,
     };
   });
-  console.log(formatedDrinks);
+
   return (
-    <div>
+    <div className="drinks">
       {formatedDrinks.map((item) => {
         return <CocktailCard key={item.id} {...item} />;
       })}

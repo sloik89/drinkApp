@@ -1,7 +1,8 @@
 import { useLoaderData, type LoaderFunction } from "react-router-dom";
 import { type DrinkTypeAxios } from "../utilis/types";
 import { customFetch } from "../utilis/customFetch";
-import { AxiosResponse } from "axios";
+
+import { useNavigation } from "react-router-dom";
 import CocktailList from "../components/CocktailList";
 export const loader: LoaderFunction = async () => {
   console.log("first");
@@ -19,7 +20,7 @@ export const loader: LoaderFunction = async () => {
 };
 const Landing = () => {
   const { drinks } = useLoaderData() as DrinkTypeAxios;
-
+  console.log(useNavigation());
   return (
     <div className="page">
       <CocktailList drinks={drinks} />
