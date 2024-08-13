@@ -5,6 +5,7 @@ export type Drink = {
   strDrinkThumb: string;
   strGlass: string;
   strDrink: string;
+  strInstructions: string;
 };
 export type DrinkTypeAxios = {
   drinks: Drink[];

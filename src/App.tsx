@@ -10,6 +10,7 @@ import {
 } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { loader as drinkLoader } from "./pages/Landing";
+import { loader as singleCocktailLoader } from "./pages/Cocktail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "cocktail/:id",
         element: <Cocktail />,
+        loader: singleCocktailLoader,
       },
       {
         path: "newsletter",
@@ -38,8 +40,6 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  const [count, setCount] = useState(0);
-
   return <RouterProvider router={router} />;
 }
 
