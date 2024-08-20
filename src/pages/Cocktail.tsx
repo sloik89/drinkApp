@@ -16,14 +16,14 @@ export const loader: LoaderFunction = async ({ params }): Promise<null> => {
 };
 const Cocktail = () => {
   const drink: any = useLoaderData();
-  console.log(drink);
+
   const ingrident = [];
   for (const prop in drink) {
     if (prop.startsWith("strIngr") && drink[prop] !== null) {
       ingrident.push(drink[prop]);
     }
   }
-  console.log(drink);
+  console.log(ingrident);
   const rensderDrink = {
     id: drink.idDrink,
     name: drink.strDrink,
@@ -33,9 +33,9 @@ const Cocktail = () => {
     info: drink.strAlcoholic,
     instructions: drink.strInstructions,
   };
-  console.log(rensderDrink);
+
   return (
-    <div className="page">
+    <div className="page cocktail-page">
       <header>
         <button>
           <Link to="/">Go back</Link>
@@ -49,24 +49,30 @@ const Cocktail = () => {
       </header>
       <div className="drink-info">
         <p>
-          <span>Name: </span>
+          <span className="text-accent">Name: </span>
           {rensderDrink.name}
         </p>
         <p>
-          <span>Category: </span>
+          <span className="text-accent">Category: </span>
           {rensderDrink.category}
         </p>
         <p>
-          <span>Glass: </span>
+          <span className="text-accent">Glass: </span>
           {rensderDrink.glass}
         </p>
         <p>
-          <span>Info: </span>
+          <span className="text-accent">Info: </span>
           {rensderDrink.info}
         </p>
         <p>
-          <span>Instructions: </span>
+          <span className="text-accent">Instructions: </span>
           {rensderDrink.instructions}
+        </p>
+        <p>
+          <span className="text-accent">Ingridients:</span>
+          {ingrident.map((item, idx) => {
+            return idx === ingrident.length - 1 ? item : item + ", ";
+          })}
         </p>
       </div>
     </div>
