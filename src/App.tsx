@@ -11,6 +11,7 @@ import {
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { loader as drinkLoader } from "./pages/Landing";
 import { loader as singleCocktailLoader } from "./pages/Cocktail";
+import { action as actionNewsletter } from "./pages/Newsletter";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: "newsletter",
         element: <Newsletter />,
+        action: actionNewsletter,
       },
       {
         path: "about",

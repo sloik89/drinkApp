@@ -140,6 +140,15 @@ button:focus-visible {
 .form-newsletter input {
   padding: 0.2rem 0;
 }
+.loading {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+.loading h3 {
+  font-size: 3rem;
+  text-align: center;
+}
 @media screen and (min-width: 700px) {
   .cocktail-page {
     flex-direction: row;

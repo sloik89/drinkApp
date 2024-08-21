@@ -1,8 +1,15 @@
 import { Form } from "react-router-dom";
+import { toast } from "react-toastify";
+import { type ActionFunction, redirect } from "react-router-dom";
+export const action: ActionFunction = async ({ request }) => {
+  const data = Object.fromEntries(await request.formData());
+  toast("Succesfull");
+  return redirect("/");
+};
 const Newsletter = () => {
   return (
     <div className="form page">
-      <Form className="form-newsletter">
+      <Form method="POST" className="form-newsletter">
         <h3
           style={{
             textAlign: "center",
@@ -11,12 +18,12 @@ const Newsletter = () => {
           Our Newsletter
         </h3>
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" />
+        <input defaultValue="john" type="text" name="name" />
         <label htmlFor="surname">Last Name</label>
-        <input type="text" name="surname" />
+        <input defaultValue="smith" type="text" name="surname" />
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" />
-        <button>Submit</button>
+        <input defaultValue="johnsmith@gmail.com" type="email" name="email" />
+        <button type="submit">Submit</button>
       </Form>
     </div>
   );
