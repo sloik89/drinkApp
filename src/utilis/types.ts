@@ -8,5 +8,6 @@ export type Drink = {
   strInstructions: string;
 };
 export type DrinkTypeAxios = {
-  drinks: Drink[];
+  // drinks: Drink[];
+  searchTerm: string;
 };

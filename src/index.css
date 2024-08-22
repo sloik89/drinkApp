@@ -149,6 +149,13 @@ button:focus-visible {
   font-size: 3rem;
   text-align: center;
 }
+.search-form {
+  margin-block: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
 @media screen and (min-width: 700px) {
   .cocktail-page {
     flex-direction: row;
